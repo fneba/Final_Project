@@ -16,17 +16,12 @@ public class Console {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty(message = "You must supply a string for model.")
     private String model;
 
-    @NotEmpty(message = "You must supply a string for manufacturer.")
     private String manufacturer;
     private String memory_amount;
     private String processor;
-    @NotEmpty(message = "You must supply a string for price.")
     private int price;
-
-    @NotEmpty(message = "You must supply a value for quantity.")
     private int quantity;
 
     public int getId() {
