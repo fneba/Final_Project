@@ -18,19 +18,19 @@ public class Tshirt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty
+
     private String size; // Let there be 3 sizes: small (S), medium (M), large (L)
 
-    @NotEmpty
+
     private String color; // Let there be 4 colors: Red, White, Black, Grey
 
-    @NotEmpty
+
     private String description;
 
-    @NotEmpty
+
     private BigDecimal price;
 
-    @NotEmpty
+
     private int quantity;
 
     public Tshirt(int id, String size, String color, String description, BigDecimal price, int quantity) {
@@ -41,6 +41,8 @@ public class Tshirt {
         this.price = price;
         this.quantity = quantity;
     }
+
+    public Tshirt() {};
 
     public int getId() {
         return id;
