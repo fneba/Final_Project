@@ -1,8 +1,7 @@
 package com.company.gamestore.repositories;
 
-import com.company.gamestore.models.Game;
+
 import com.company.gamestore.models.Invoice;
-import com.company.gamestore.models.Tshirt;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
