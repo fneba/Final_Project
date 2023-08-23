@@ -34,7 +34,7 @@ public class TshirtController {
         return repo.findByColor(color);
     }
 
-    // Custome Method 2
+    // Custom Method 2
     @GetMapping("/tshirts/size/{size}")
     public List<Tshirt> getTshirtBySize(@PathVariable String size) {
         return repo.findBySize(size);
