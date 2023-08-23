@@ -58,8 +58,8 @@ public class ConsoleController {
 
     //FIND CONSOLE BY MANUFACTURER
     @GetMapping("/console/manufacturer/{id}")
-    public List<Console> getConsoleByManufacturer(@PathVariable String manufacturer) {
-        List<Console> returnVal = repo.findByManufacturer(manufacturer);
+    public List<Console> getConsoleByManufacturer(@PathVariable String id) {
+        List<Console> returnVal = repo.findByManufacturer(id);
         if (returnVal.isEmpty() == false) {
             return returnVal;
         } else {
