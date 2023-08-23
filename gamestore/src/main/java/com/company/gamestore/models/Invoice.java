@@ -32,6 +32,8 @@ public class Invoice {
 
     private int quantity;
 
+    private BigDecimal unitPrice;
+
     private BigDecimal subtotal;
 
     private BigDecimal tax;
@@ -160,6 +162,14 @@ public class Invoice {
 
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     @Override

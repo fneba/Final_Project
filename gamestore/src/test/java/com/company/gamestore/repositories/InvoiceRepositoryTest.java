@@ -52,6 +52,7 @@ class InvoiceRepositoryTest {
         invoice.setSubtotal(new BigDecimal("100.45"));
         invoice.setTotal(new BigDecimal("113.15"));
         invoice.setZipCode("11111");
+        invoice.setUnitPrice(new BigDecimal("12.99"));
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -67,6 +68,7 @@ class InvoiceRepositoryTest {
         invoice2.setSubtotal(new BigDecimal("200.25"));
         invoice2.setTotal(new BigDecimal("210.24"));
         invoice2.setZipCode("22222");
+        invoice2.setUnitPrice(new BigDecimal("11.99"));
 
 
         invoice = invoiceRepo.save(invoice);
@@ -94,6 +96,7 @@ class InvoiceRepositoryTest {
         invoice.setSubtotal(new BigDecimal("100.45"));
         invoice.setTotal(new BigDecimal("113.15"));
         invoice.setZipCode("11111");
+        invoice.setUnitPrice(new BigDecimal("12.99"));
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -109,6 +112,7 @@ class InvoiceRepositoryTest {
         invoice2.setSubtotal(new BigDecimal("200.25"));
         invoice2.setTotal(new BigDecimal("210.24"));
         invoice2.setZipCode("22222");
+        invoice2.setUnitPrice(new BigDecimal("11.99"));
 
         invoice = invoiceRepo.save(invoice);
         invoice2 = invoiceRepo.save(invoice2);
@@ -117,10 +121,10 @@ class InvoiceRepositoryTest {
         Invoice invoiceGot = invoiceRepo.findById(invoice.getId()).orElse(null);
 
         assertNotNull(invoiceGot);
-        assertEquals("Hyattsville", invoiceGot.getCity());
-        assertEquals("types", invoiceGot.getItemType());
-        assertEquals("MD", invoiceGot.getState());
-        assertEquals(10, invoiceGot.getQuantity());
+        assertEquals("New York", invoiceGot.getCity());
+        assertEquals("type", invoiceGot.getItemType());
+        assertEquals("NY", invoiceGot.getState());
+        assertEquals(5, invoiceGot.getQuantity());
 
     }
 
@@ -141,6 +145,7 @@ class InvoiceRepositoryTest {
         invoice.setSubtotal(new BigDecimal("100.45"));
         invoice.setTotal(new BigDecimal("113.15"));
         invoice.setZipCode("11111");
+        invoice.setUnitPrice(new BigDecimal("12.99"));
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -156,6 +161,7 @@ class InvoiceRepositoryTest {
         invoice2.setSubtotal(new BigDecimal("200.25"));
         invoice2.setTotal(new BigDecimal("210.24"));
         invoice2.setZipCode("22222");
+        invoice2.setUnitPrice(new BigDecimal("11.99"));
 
 
         invoice = invoiceRepo.save(invoice);
@@ -186,6 +192,7 @@ class InvoiceRepositoryTest {
         invoice.setSubtotal(new BigDecimal("100.45"));
         invoice.setTotal(new BigDecimal("113.15"));
         invoice.setZipCode("11111");
+        invoice.setUnitPrice(new BigDecimal("12.99"));
 
 
         Invoice invoice1 = invoiceRepo.save(invoice);
