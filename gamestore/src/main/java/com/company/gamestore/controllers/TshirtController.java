@@ -17,7 +17,7 @@ public class TshirtController {
 
     // Read (All)
     @GetMapping("/tshirts")
-    public List<Tshirt> getAlbum(){
+    public List<Tshirt> getTshirt(){
         return repo.findAll();
     }
 
@@ -29,13 +29,13 @@ public class TshirtController {
     }
 
     // Custom Method 1
-    @GetMapping("/tshirts/color")
+    @GetMapping("/tshirts/color/{color}")
     public List<Tshirt> getTshirtByColor(@PathVariable String color) {
         return repo.findByColor(color);
     }
 
     // Custome Method 2
-    @GetMapping("/tshirts/size")
+    @GetMapping("/tshirts/size/{size}")
     public List<Tshirt> getTshirtBySize(@PathVariable String size) {
         return repo.findBySize(size);
     }
@@ -60,7 +60,7 @@ public class TshirtController {
     }
 
     // Delete
-    @DeleteMapping("/tshirts/{id}")
+    @DeleteMapping("/tshirt/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTshirt(@PathVariable int id){
         repo.deleteById(id);

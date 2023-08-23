@@ -110,10 +110,34 @@ public class TshirtRepositoryTest {
 
     }
 
-//    @Test
-//    public void shouldGetTshirtBySize(){
-//
-//    }
+    @Test
+    public void shouldGetTshirtBySize(){
+
+        // ARRANGE
+        Tshirt tshirt = new Tshirt();
+        tshirt.setColor("Red");
+        tshirt.setDescription("Big red tshirt.");
+        tshirt.setSize("Large");
+        tshirt.setQuantity(5);
+        tshirt.setPrice(new BigDecimal("5.99"));
+
+        tshirt = tshirtRepository.save(tshirt);
+
+        Tshirt tshirt2 = new Tshirt();
+        tshirt2.setColor("White");
+        tshirt2.setDescription("Medium white tshirt.");
+        tshirt2.setSize("Medium");
+        tshirt2.setQuantity(5);
+        tshirt2.setPrice(new BigDecimal("3.99"));
+
+        tshirt2 = tshirtRepository.save(tshirt2);
+
+        // ACT
+        List<Tshirt> retrievedTshirts = tshirtRepository.findBySize("Medium");
+
+        // ASSERT
+        assertEquals(1, retrievedTshirts.size());
+    }
 
     @Test
     public void shouldAddTshirt(){
