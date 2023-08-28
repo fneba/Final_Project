@@ -18,16 +18,12 @@ public class InvoiceController {
     @Autowired
     InvoiceRepository invoiceRepository;
 
-//    @Autowired
-//    TaxRepository taxRepo;
-//
-//    @Autowired
-//    ProcessingFeeRepository proFeeRepo;
 
     // Create
     @PostMapping("/invoices")
     @ResponseStatus(HttpStatus.CREATED)
     public Invoice createInvoice (@RequestBody Invoice invoice) {
+
         return invoiceRepository.save(invoice);
     }
 
