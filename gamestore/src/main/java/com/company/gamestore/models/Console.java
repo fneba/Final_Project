@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -21,7 +22,7 @@ public class Console {
     private String manufacturer;
     private String memory_amount;
     private String processor;
-    private int price;
+    private BigDecimal price;
     private int quantity;
 
     public int getId() {
@@ -64,11 +65,11 @@ public class Console {
         this.processor = processor;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

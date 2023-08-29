@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,7 +31,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -49,7 +50,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -72,7 +73,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -96,7 +97,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -118,7 +119,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -130,7 +131,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -151,7 +152,7 @@ public class ConsoleRepositoryTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 

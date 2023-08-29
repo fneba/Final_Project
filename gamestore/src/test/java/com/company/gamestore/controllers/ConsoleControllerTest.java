@@ -23,6 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.junit.*;
 
+import java.math.BigDecimal;
+
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(ConsoleController.class)
 public class ConsoleControllerTest {
@@ -45,7 +47,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -80,7 +82,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
@@ -111,7 +113,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(499);
+        console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
         console.setMemory_amount("1000000");
 
