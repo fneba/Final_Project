@@ -19,68 +19,68 @@ public class InvoiceController {
     // The commented out paths are the invoice controller paths using service layer
     // left commented until discussion with group
 
-//    @Autowired
-//    ServiceLayer serviceLayer;
-
-//    // Create
-//    @PostMapping("/invoices")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public InvoiceViewModel createInvoice (@RequestBody InvoiceViewModel invoiceViewModel) {
-//
-//        return serviceLayer.createInvoice(invoiceViewModel);
-//    }
-
-//    // Read
-//    @GetMapping("/invoices/{id}")
-//    public InvoiceViewModel getInvoiceById(@PathVariable int id){
-//        return serviceLayer.findInvoiceById(id);
-//    }
-
-//    // Read All
-//    @GetMapping("/invoices")
-//    public List<InvoiceViewModel> getInvoices(){
-//        return serviceLayer.findInvoices();
-//    }
-
-//    // Custom Method
-//    @GetMapping("/invoices/invoice/{name}")
-//    public List<InvoiceViewModel> getInvoiceByCustomerName(@PathVariable String name) {
-//        return serviceLayer.findInvoicesByName(name);
-//    }
-
-
     @Autowired
-    InvoiceRepository invoiceRepository;
-
+    ServiceLayer serviceLayer;
 
     // Create
     @PostMapping("/invoices")
     @ResponseStatus(HttpStatus.CREATED)
-    public Invoice createInvoice (@RequestBody Invoice invoice) {
+    public InvoiceViewModel createInvoice(@RequestBody InvoiceViewModel invoiceViewModel) {
 
-        return invoiceRepository.save(invoice);
+        return serviceLayer.createInvoice(invoiceViewModel);
     }
 
     // Read
     @GetMapping("/invoices/{id}")
-    public Invoice getInvoiceById(@PathVariable int id){
-        Optional<Invoice> returnVal = invoiceRepository.findById(id);
-        if (returnVal.isPresent()){
-            return returnVal.get();
-        } else {
-            return null;
-        }
+    public InvoiceViewModel getInvoiceById(@PathVariable int id){
+        return serviceLayer.findInvoiceById(id);
     }
 
     // Read All
     @GetMapping("/invoices")
-    public List<Invoice> getInvoices(){
-        return invoiceRepository.findAll();
+    public List<InvoiceViewModel> getInvoices(){
+        return serviceLayer.findInvoices();
     }
 
     // Custom Method
     @GetMapping("/invoices/invoice/{name}")
-    public List<Invoice> getInvoiceByCustomerName(@PathVariable String name) {
-        return invoiceRepository.findByName(name);
+    public List<InvoiceViewModel> getInvoiceByCustomerName(@PathVariable String name) {
+        return serviceLayer.findInvoicesByName(name);
     }
+
+
+//    @Autowired
+//    InvoiceRepository invoiceRepository;
+//
+//
+//    // Create
+//    @PostMapping("/invoices")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Invoice createInvoice (@RequestBody Invoice invoice) {
+//
+//        return invoiceRepository.save(invoice);
+//    }
+//
+//    // Read
+//    @GetMapping("/invoices/{id}")
+//    public Invoice getInvoiceById(@PathVariable int id){
+//        Optional<Invoice> returnVal = invoiceRepository.findById(id);
+//        if (returnVal.isPresent()){
+//            return returnVal.get();
+//        } else {
+//            return null;
+//        }
+//    }
+//
+//    // Read All
+//    @GetMapping("/invoices")
+//    public List<Invoice> getInvoices(){
+//        return invoiceRepository.findAll();
+//    }
+//
+//    // Custom Method
+//    @GetMapping("/invoices/invoice/{name}")
+//    public List<Invoice> getInvoiceByCustomerName(@PathVariable String name) {
+//        return invoiceRepository.findByName(name);
+//    }
 }

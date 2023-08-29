@@ -4,6 +4,7 @@ import com.company.gamestore.models.Invoice;
 import com.company.gamestore.repositories.InvoiceRepository;
 import com.company.gamestore.repositories.ProcessingFeeRepository;
 import com.company.gamestore.repositories.TaxRepository;
+import com.company.gamestore.service.ServiceLayer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +26,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(InvoiceController.class)
 class InvoiceControllerTest {
 
+    @MockBean
+    ServiceLayer serviceLayer;
+
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    InvoiceRepository invoiceRepo;
-
-    @MockBean
-    TaxRepository taxRepo;
-
-    @MockBean
-    ProcessingFeeRepository proFeeRepo;
+//    @MockBean
+//    InvoiceRepository invoiceRepo;
+//
+//    @MockBean
+//    TaxRepository taxRepo;
+//
+//    @MockBean
+//    ProcessingFeeRepository proFeeRepo;
 
     private ObjectMapper mapper = new ObjectMapper();
 

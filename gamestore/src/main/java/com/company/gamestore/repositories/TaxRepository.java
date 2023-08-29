@@ -12,4 +12,6 @@ import java.util.List;
 public interface TaxRepository extends JpaRepository<Tax, String> {
 
     BigDecimal findRateByState(String state);
+
+
 }

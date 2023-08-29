@@ -76,7 +76,7 @@ public class ServiceLayer {
         List<InvoiceViewModel> ivmList = new ArrayList<>();
 
         for (Invoice invoice: invoices){
-            // tranform invoice into ivm
+            // transform invoice into ivm
             InvoiceViewModel ivm = buildInvoiceViewModel(invoice);
             // add avm to list
             ivmList.add(ivm);
@@ -100,68 +100,67 @@ public class ServiceLayer {
         inv.setQuantity(viewModel.getQuantity());
 
 
-        if ("game".equalsIgnoreCase(inv.getItemType())  ) {
-            if (gameRepository.findById(inv.getItemId()).isPresent()){
-                if (gameRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()){
-                    // update repo quantity
-                    gameRepository.findById(inv.getItemId()).get().setQuantity(gameRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
-
-                    // set unitPrice
-                    inv.setUnitPrice(gameRepository.findById(inv.getItemId()).get().getPrice());
-
-
-
-
-                } else{
-                    throw new IllegalArgumentException("Quantity not in stock");
-                }
-            }
-            else{
-                throw new IllegalArgumentException("ItemId not found");
-            }
-        }
-
-        else if ("tshirt".equalsIgnoreCase(inv.getItemType())) {
-            if (tshirtRepository.findById(inv.getItemId()).isPresent()){
-                if (tshirtRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()){
-                    // update repo quantity
-                    tshirtRepository.findById(inv.getItemId()).get().setQuantity(tshirtRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
-
-                    // set unitPrice
-                    inv.setUnitPrice(tshirtRepository.findById(inv.getItemId()).get().getPrice());
-                } else{
-                    throw new IllegalArgumentException("Quantity not in stock.");
-                }
-
-            }
-            else{
-                throw new IllegalArgumentException("ItemId not found");
-            }
-
-        }
-
-        else if ("console".equalsIgnoreCase(inv.getItemType())) {
-            if (consoleRepository.findById(inv.getItemId()).isPresent()){
-                if (consoleRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()){
-                    // update repo quantity
-                    consoleRepository.findById(inv.getItemId()).get().setQuantity(consoleRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
-
-                    // set unitPrice
-                    inv.setUnitPrice(consoleRepository.findById(inv.getItemId()).get().getPrice());
-
-
-                } else{
-                    throw new IllegalArgumentException("Quantity not in stock.");
-                }
-
-            }
-            else{
-                throw new IllegalArgumentException("ItemId not found");
-            }
-
+        if (!"game".equalsIgnoreCase(inv.getItemType()) || !"tshirt".equalsIgnoreCase(inv.getItemType()) || !"console".equalsIgnoreCase(inv.getItemType())) {
+            throw new IllegalArgumentException("Please enter game, console or tshirt");
         }
         else {
-            throw new IllegalArgumentException("Please enter game, console or tshirt");
+            if (inv.getQuantity() < 0) {
+                throw new IllegalArgumentException("Quantity must be greater than zero");
+            }
+            if (!taxRepository.findById(inv.getState()).isPresent()){
+                throw new IllegalArgumentException("Input two letter State code");
+            }
+            if ("game".equalsIgnoreCase(inv.getItemType())) {
+                if (gameRepository.findById(inv.getItemId()).isPresent()) {
+                    if (gameRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()) {
+                        // update repo quantity
+                        gameRepository.findById(inv.getItemId()).get().setQuantity(gameRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
+
+                        // set unitPrice
+                        inv.setUnitPrice(gameRepository.findById(inv.getItemId()).get().getPrice());
+
+
+                    } else {
+                        throw new IllegalArgumentException("Quantity not in stock");
+                    }
+                } else {
+                    throw new IllegalArgumentException("ItemId not found");
+                }
+            } else if ("tshirt".equalsIgnoreCase(inv.getItemType())) {
+                if (tshirtRepository.findById(inv.getItemId()).isPresent()) {
+                    if (tshirtRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()) {
+                        // update repo quantity
+                        tshirtRepository.findById(inv.getItemId()).get().setQuantity(tshirtRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
+
+                        // set unitPrice
+                        inv.setUnitPrice(tshirtRepository.findById(inv.getItemId()).get().getPrice());
+                    } else {
+                        throw new IllegalArgumentException("Quantity not in stock.");
+                    }
+
+                } else {
+                    throw new IllegalArgumentException("ItemId not found");
+                }
+
+            } else if ("console".equalsIgnoreCase(inv.getItemType())) {
+                if (consoleRepository.findById(inv.getItemId()).isPresent()) {
+                    if (consoleRepository.findById(inv.getItemId()).get().getQuantity() > inv.getQuantity()) {
+                        // update repo quantity
+                        consoleRepository.findById(inv.getItemId()).get().setQuantity(consoleRepository.findById(inv.getItemId()).get().getQuantity() - inv.getQuantity());
+
+                        // set unitPrice
+                        inv.setUnitPrice(consoleRepository.findById(inv.getItemId()).get().getPrice());
+
+
+                    } else {
+                        throw new IllegalArgumentException("Quantity not in stock.");
+                    }
+
+                } else {
+                    throw new IllegalArgumentException("ItemId not found");
+                }
+
+            }
         }
 
         inv.setSubtotal(inv.getUnitPrice().multiply(BigDecimal.valueOf(inv.getQuantity())));
