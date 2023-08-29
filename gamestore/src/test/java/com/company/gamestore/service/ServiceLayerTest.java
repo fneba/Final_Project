@@ -71,20 +71,93 @@ class ServiceLayerTest {
     // Below are tests that haven't been completed yet but were commented out so groupmates can run completed
     // test
 
-//    @Test
-//    public void shouldFindInvoiceById() {
-//
-//    }
-//
-//    @Test
-//    public void shouldFindInvoicesByName() {
-//
-//    }
-//
-//    @Test
-//    public void shouldfindInvoices() {
-//
-//    }
+    @Test
+    public void shouldFindInvoiceByName() {
+        InvoiceViewModel toFind = new InvoiceViewModel();
+        toFind.setId(1);
+        toFind.setCity("New York");
+        toFind.setQuantity(5);
+        toFind.setName("Josh");
+        toFind.setItemId(1);
+        toFind.setItemType("type");
+        toFind.setState("NY");
+        toFind.setProcessingFee(new BigDecimal("1.99"));
+        toFind.setTax(new BigDecimal("12.99"));
+        toFind.setStreet("fake st");
+        toFind.setSubtotal(new BigDecimal("100.45"));
+        toFind.setTotal(new BigDecimal("113.15"));
+        toFind.setZipCode("11111");
+        toFind.setUnitPrice(new BigDecimal("12.99"));
+
+        List<InvoiceViewModel> invoiceViewModel = service.findInvoicesByName("Josh");
+        assertEquals(invoiceViewModel.get(0), toFind);
+
+    }
+
+    @Test
+    public void shouldFindInvoicesById() {
+        InvoiceViewModel toFind = new InvoiceViewModel();
+        toFind.setId(1);
+        toFind.setCity("New York");
+        toFind.setQuantity(5);
+        toFind.setName("Josh");
+        toFind.setItemId(1);
+        toFind.setItemType("type");
+        toFind.setState("NY");
+        toFind.setProcessingFee(new BigDecimal("1.99"));
+        toFind.setTax(new BigDecimal("12.99"));
+        toFind.setStreet("fake st");
+        toFind.setSubtotal(new BigDecimal("100.45"));
+        toFind.setTotal(new BigDecimal("113.15"));
+        toFind.setZipCode("11111");
+        toFind.setUnitPrice(new BigDecimal("12.99"));
+
+        InvoiceViewModel invoiceViewModel = service.findInvoiceById(1);
+        assertEquals(invoiceViewModel, toFind);
+
+    }
+
+    @Test
+    public void shouldfindInvoices() {
+        InvoiceViewModel toFind = new InvoiceViewModel();
+        toFind.setId(1);
+        toFind.setCity("New York");
+        toFind.setQuantity(5);
+        toFind.setName("Josh");
+        toFind.setItemId(1);
+        toFind.setItemType("type");
+        toFind.setState("NY");
+        toFind.setProcessingFee(new BigDecimal("1.99"));
+        toFind.setTax(new BigDecimal("12.99"));
+        toFind.setStreet("fake st");
+        toFind.setSubtotal(new BigDecimal("100.45"));
+        toFind.setTotal(new BigDecimal("113.15"));
+        toFind.setZipCode("11111");
+        toFind.setUnitPrice(new BigDecimal("12.99"));
+
+        InvoiceViewModel toFind2 = new InvoiceViewModel();
+        toFind2.setId(2);
+        toFind2.setCity("Bronx");
+        toFind2.setQuantity(5);
+        toFind2.setName("Kevin");
+        toFind2.setItemId(1);
+        toFind2.setItemType("shirt");
+        toFind2.setState("NY");
+        toFind2.setProcessingFee(new BigDecimal("1.99"));
+        toFind2.setTax(new BigDecimal("12.99"));
+        toFind2.setStreet("faker st");
+        toFind2.setSubtotal(new BigDecimal("100.45"));
+        toFind2.setTotal(new BigDecimal("113.15"));
+        toFind2.setZipCode("22222");
+        toFind2.setUnitPrice(new BigDecimal("12.99"));
+
+        List<InvoiceViewModel> invoiceViewModels = service.findInvoices();
+        assertEquals(2, invoiceViewModels.size());
+
+    }
+
+
+
 
 
 
