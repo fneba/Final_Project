@@ -110,8 +110,8 @@ public class GameRepositoryTest {
         game.setPrice(new BigDecimal("79.99"));
         gameRepository.save(game);
 
-        Optional author1 = gameRepository.findById(game.getGameId());
-        assertEquals(author1.get(), game);
+        Optional game1 = gameRepository.findById(game.getGameId());
+        assertEquals(game1.get(), game);
 
     }
 

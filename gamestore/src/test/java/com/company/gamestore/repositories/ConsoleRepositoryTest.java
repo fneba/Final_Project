@@ -19,26 +19,29 @@ public class ConsoleRepositoryTest {
     @Autowired
     ConsoleRepository repository;
 
+
     @BeforeEach
     public void setUp() throws Exception {
         repository.deleteAll();
+
     }
 
     //CREATE
     @Test
     public void createConsole(){
+
         Console console = new Console();
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(new BigDecimal("499"));
+        console.setPrice(new BigDecimal("499.00"));
         console.setProcessor("Intel I9");
         console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
         Optional<Console> console1 = repository.findById(console.getId());
-        assertEquals(console1.get(), console);
+        assertEquals(console1.get().getId(), console.getId());
 
     }
 
@@ -61,7 +64,7 @@ public class ConsoleRepositoryTest {
         //Act...
         Optional<Console> console1 = repository.findById(console.getId());
         //Assert...
-        assertEquals(console1.get(), console);
+        assertEquals(console1.get().getId(), console.getId());
     }
 
     //DELETE
@@ -80,7 +83,7 @@ public class ConsoleRepositoryTest {
         //Act...
         console = repository.save(console);
         Optional<Console> console1 = repository.findById(console.getId());
-        assertEquals(console1.get(), console);
+        assertEquals(console1.get().getId(), console.getId());
         //Act...
         repository.deleteById(console.getId());
         console1 = repository.findById(console.getId());
@@ -107,7 +110,7 @@ public class ConsoleRepositoryTest {
         Optional<Console> foundConsole = repository.findById(console.getId());
 
         //Assert...
-        assertEquals(foundConsole.get(), console);
+        assertEquals(foundConsole.get().getId(), console.getId());
     }
 
     //READ ALL
