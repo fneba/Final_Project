@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -38,6 +40,49 @@ public class ServiceLayer {
         this.invoiceRepository = invoiceRepository;
         this.taxRepository = taxRepository;
         this.procFeeRepository = procFeeRepository;
+    }
+
+    public InvoiceViewModel findInvoiceById(int id) {
+
+        // Get the album object first
+        Optional<Invoice> invoice = invoiceRepository.findById(1);
+
+        return invoice.isPresent() ? buildInvoiceViewModel(invoice.get()) : null;
+    }
+
+    // find invoice(s) by name
+    public List<InvoiceViewModel> findInvoicesByName(String name) {
+
+        // Get the album object first
+        List<Invoice> invoices = invoiceRepository.findByName(name);
+
+        List<InvoiceViewModel> ivmList = new ArrayList<>();
+
+        for (Invoice invoice: invoices){
+            // tranform invoice into ivm
+            InvoiceViewModel ivm = buildInvoiceViewModel(invoice);
+            // add avm to list
+            ivmList.add(ivm);
+        }
+        // return a list of album view models
+        return ivmList;
+    }
+
+    public List<InvoiceViewModel> findInvoices() {
+
+        // Get the album object first
+        List<Invoice> invoices = invoiceRepository.findAll();
+
+        List<InvoiceViewModel> ivmList = new ArrayList<>();
+
+        for (Invoice invoice: invoices){
+            // tranform invoice into ivm
+            InvoiceViewModel ivm = buildInvoiceViewModel(invoice);
+            // add avm to list
+            ivmList.add(ivm);
+        }
+        // return a list of album view models
+        return ivmList;
     }
 
     // Create an Invoice

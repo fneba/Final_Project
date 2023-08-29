@@ -20,7 +20,8 @@ public class Console {
     private String model;
 
     private String manufacturer;
-    private String memory_amount;
+
+    private String memoryAmount;
     private String processor;
     private BigDecimal price;
     private int quantity;
@@ -49,12 +50,12 @@ public class Console {
         this.manufacturer = manufacturer;
     }
 
-    public String getMemory_amount() {
-        return memory_amount;
+    public String getMemoryAmount() {
+        return memoryAmount;
     }
 
-    public void setMemory_amount(String memory_amount) {
-        this.memory_amount = memory_amount;
+    public void setMemoryAmount(String memoryAmount) {
+        this.memoryAmount = memoryAmount;
     }
 
     public String getProcessor() {
@@ -86,12 +87,12 @@ public class Console {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Console console = (Console) o;
-        return id == console.id && price == console.price && quantity == console.quantity && Objects.equals(model, console.model) && Objects.equals(manufacturer, console.manufacturer) && Objects.equals(memory_amount, console.memory_amount) && Objects.equals(processor, console.processor);
+        return id == console.id && price == console.price && quantity == console.quantity && Objects.equals(model, console.model) && Objects.equals(manufacturer, console.manufacturer) && Objects.equals(memoryAmount, console.memoryAmount) && Objects.equals(processor, console.processor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, model, manufacturer, memory_amount, processor, price, quantity);
+        return Objects.hash(id, model, manufacturer, memoryAmount, processor, price, quantity);
     }
 
     @Override
@@ -100,7 +101,7 @@ public class Console {
                 "id=" + id +
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
-                ", memory_amount='" + memory_amount + '\'' +
+                ", memory_amount='" + memoryAmount + '\'' +
                 ", processor='" + processor + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +

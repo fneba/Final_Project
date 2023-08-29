@@ -49,7 +49,7 @@ public class ConsoleControllerTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         String inputJson = mapper.writeValueAsString(console);
 
@@ -84,7 +84,7 @@ public class ConsoleControllerTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         String inputJson = mapper.writeValueAsString(console);
 
@@ -115,7 +115,7 @@ public class ConsoleControllerTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         mockMvc.perform(get("/console/manufacturer/Sony"))
                 .andDo(print())

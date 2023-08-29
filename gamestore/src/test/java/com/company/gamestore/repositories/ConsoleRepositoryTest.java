@@ -33,7 +33,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -52,7 +52,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -75,7 +75,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -99,7 +99,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -121,7 +121,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -133,7 +133,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
@@ -154,7 +154,7 @@ public class ConsoleRepositoryTest {
         console.setQuantity(1);
         console.setPrice(new BigDecimal("499"));
         console.setProcessor("Intel I9");
-        console.setMemory_amount("1000000");
+        console.setMemoryAmount("1000000");
 
         //Act...
         console = repository.save(console);
