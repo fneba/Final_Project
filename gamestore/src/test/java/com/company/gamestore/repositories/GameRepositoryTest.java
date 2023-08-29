@@ -100,8 +100,8 @@ public class GameRepositoryTest {
 
         // ACT
 
-        Optional game1 = gameRepository.findById(game.getGameId());
-        assertEquals(game.getGameId(), game.getGameId());
+        Optional<Game> game1 = gameRepository.findById(game.getGameId());
+        assertEquals(game.getGameId(), game1.get().getGameId());
     }
 
     @Test
