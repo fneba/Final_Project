@@ -31,7 +31,7 @@ public class GameRepositoryTest {
         game.setEsrbRating("R");
         game.setQuantity(5);
         game.setStudio("Insomnia");
-        game.setPrice(new BigDecimal("59.99"));
+        game.setPrice(59.99);
 
 
         game2 = new Game();
@@ -40,7 +40,7 @@ public class GameRepositoryTest {
         game2.setEsrbRating("R");
         game2.setQuantity(5);
         game2.setStudio("Insomnia");
-        game2.setPrice(new BigDecimal("59.99"));
+        game2.setPrice(59.99);
 
     }
 
@@ -71,7 +71,7 @@ public class GameRepositoryTest {
 
         // ASSERT
 
-        assertEquals(new BigDecimal("59.99"), retrievedGame.getPrice());
+        assertEquals(59.99, retrievedGame.getPrice());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class GameRepositoryTest {
         // ACT
         List<Game> retrievedGame = gameRepository.findByEsrbRating("R");
 
-        // ASSERT 
+        // ASSERT
         assertEquals(1, retrievedGame.size());
 
 
@@ -107,7 +107,7 @@ public class GameRepositoryTest {
     @Test
     public void shouldUpdateGame(){
 
-        game.setPrice(new BigDecimal("79.99"));
+        game.setPrice(79.99);
         gameRepository.save(game);
 
         Optional game1 = gameRepository.findById(game.getGameId());

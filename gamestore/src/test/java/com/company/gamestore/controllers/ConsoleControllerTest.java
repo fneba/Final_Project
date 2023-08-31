@@ -47,7 +47,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(new BigDecimal("499"));
+        console.setPrice(499.00);
         console.setProcessor("Intel I9");
         console.setMemoryAmount("1000000");
 
@@ -82,7 +82,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(new BigDecimal("499"));
+        console.setPrice(499.00);
         console.setProcessor("Intel I9");
         console.setMemoryAmount("1000000");
 
@@ -113,7 +113,7 @@ public class ConsoleControllerTest {
         console.setModel("PS5");
         console.setManufacturer("Sony");
         console.setQuantity(1);
-        console.setPrice(new BigDecimal("499"));
+        console.setPrice(499.00);
         console.setProcessor("Intel I9");
         console.setMemoryAmount("1000000");
 

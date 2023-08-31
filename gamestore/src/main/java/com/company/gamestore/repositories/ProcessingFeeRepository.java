@@ -9,5 +9,5 @@ import java.math.BigDecimal;
 @Repository
 public interface ProcessingFeeRepository extends JpaRepository<Fee, String> {
 
-    BigDecimal findFeeByProductType(String itemType);
+    Double findFeeByProductType(String itemType);
 }

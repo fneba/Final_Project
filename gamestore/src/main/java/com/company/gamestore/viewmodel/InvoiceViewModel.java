@@ -24,15 +24,15 @@ public class InvoiceViewModel {
 
     private int quantity;
 
-    private BigDecimal unitPrice;
+    private Double unitPrice;
 
-    private BigDecimal subtotal;
+    private Double subtotal;
 
-    private BigDecimal tax;
+    private Double tax;
 
-    private BigDecimal processingFee;
+    private Double processingFee;
 
-    private BigDecimal total;
+    private Double total;
 
     public int getId() {
         return id;
@@ -106,76 +106,44 @@ public class InvoiceViewModel {
         this.quantity = quantity;
     }
 
-    public BigDecimal getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
-    public BigDecimal getSubtotal() {
+    public Double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(BigDecimal subtotal) {
+    public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
 
-    public BigDecimal getTax() {
+    public Double getTax() {
         return tax;
     }
 
-    public void setTax(BigDecimal tax) {
+    public void setTax(Double tax) {
         this.tax = tax;
     }
 
-    public BigDecimal getProcessingFee() {
+    public Double getProcessingFee() {
         return processingFee;
     }
 
-    public void setProcessingFee(BigDecimal processingFee) {
+    public void setProcessingFee(Double processingFee) {
         this.processingFee = processingFee;
     }
 
-    public BigDecimal getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof InvoiceViewModel)) return false;
-        InvoiceViewModel that = (InvoiceViewModel) o;
-        return getId() == that.getId() && getItemId() == that.getItemId() && getQuantity() == that.getQuantity() && Objects.equals(getName(), that.getName()) && Objects.equals(getStreet(), that.getStreet()) && Objects.equals(getCity(), that.getCity()) && Objects.equals(getState(), that.getState()) && Objects.equals(getZipCode(), that.getZipCode()) && Objects.equals(getItemType(), that.getItemType()) && Objects.equals(getUnitPrice(), that.getUnitPrice()) && Objects.equals(getSubtotal(), that.getSubtotal()) && Objects.equals(getTax(), that.getTax()) && Objects.equals(getProcessingFee(), that.getProcessingFee()) && Objects.equals(getTotal(), that.getTotal());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName(), getStreet(), getCity(), getState(), getZipCode(), getItemType(), getItemId(), getQuantity(), getUnitPrice(), getSubtotal(), getTax(), getProcessingFee(), getTotal());
-    }
-
-    @Override
-    public String toString() {
-        return "InvoiceViewModel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", street='" + street + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", itemType='" + itemType + '\'' +
-                ", itemId=" + itemId +
-                ", quantity=" + quantity +
-                ", unitPrice=" + unitPrice +
-                ", subtotal=" + subtotal +
-                ", tax=" + tax +
-                ", processingFee=" + processingFee +
-                ", total=" + total +
-                '}';
-    }
 }
+

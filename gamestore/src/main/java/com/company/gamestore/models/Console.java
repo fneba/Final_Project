@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -17,13 +18,19 @@ public class Console {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotEmpty(message = "You must supply a value for model")
     private String model;
 
+    @NotEmpty(message = "You must supply a value for manufacturer")
     private String manufacturer;
 
     private String memoryAmount;
     private String processor;
-    private BigDecimal price;
+
+    @NotNull(message = "You must supply a value for price")
+    private Double price;
+
+    @NotNull(message = "You must supply a value for quantity")
     private int quantity;
 
     public int getId() {
@@ -66,11 +73,11 @@ public class Console {
         this.processor = processor;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

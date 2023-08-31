@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -163,24 +162,24 @@ public class ServiceLayer {
             }
         }
 
-        inv.setSubtotal(inv.getUnitPrice().multiply(BigDecimal.valueOf(inv.getQuantity())));
+        inv.setSubtotal(inv.getUnitPrice() * inv.getQuantity());
 
         // Assume state is correct and calculate tax
-        inv.setTax(taxRepository.findRateByState(inv.getState()).multiply(inv.getSubtotal()));
+        inv.setTax(taxRepository.findRateByState(inv.getState()) * (inv.getSubtotal()));
 
         // get & set processing fee
         inv.setProcessingFee(procFeeRepository.findFeeByProductType(inv.getItemType()));
 
         if (inv.getQuantity() > 10){
-            inv.setProcessingFee(inv.getProcessingFee().add(new BigDecimal("15.49")));
+            inv.setProcessingFee(inv.getProcessingFee() + 15.49);
         }
 
         // calculate and set total
-        inv.setTotal(inv.getSubtotal().add(inv.getTax()).add(inv.getProcessingFee()));
+        inv.setTotal(inv.getSubtotal() + (inv.getTax())+(inv.getProcessingFee()));
 
         // maxtotal error handling
 
-        if (inv.getTotal().compareTo(new BigDecimal("999.99")) > 0){
+        if (inv.getTotal()> 999.99){
             throw new IllegalArgumentException("Total cannot exceed $999.99, please reduce quantity");
         }
 

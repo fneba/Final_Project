@@ -33,7 +33,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -42,7 +42,7 @@ public class TshirtRepositoryTest {
         tshirt2.setDescription("Medium white tshirt.");
         tshirt2.setSize("Medium");
         tshirt2.setQuantity(5);
-        tshirt2.setPrice(new BigDecimal("3.99"));
+        tshirt2.setPrice(3.99);
 
         tshirt2 = tshirtRepository.save(tshirt2);
 
@@ -62,7 +62,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -75,7 +75,7 @@ public class TshirtRepositoryTest {
         assertEquals("Big red tshirt.", retrievedTshirt.getDescription());
         assertEquals("Large", retrievedTshirt.getSize());
         assertEquals(5, retrievedTshirt.getQuantity());
-        assertEquals(new BigDecimal("5.99"), retrievedTshirt.getPrice());
+        assertEquals(5.99, retrievedTshirt.getPrice());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -96,7 +96,7 @@ public class TshirtRepositoryTest {
         tshirt2.setDescription("Medium white tshirt.");
         tshirt2.setSize("Medium");
         tshirt2.setQuantity(5);
-        tshirt2.setPrice(new BigDecimal("3.99"));
+        tshirt2.setPrice(3.99);
 
         tshirt2 = tshirtRepository.save(tshirt2);
 
@@ -119,7 +119,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -128,7 +128,7 @@ public class TshirtRepositoryTest {
         tshirt2.setDescription("Medium white tshirt.");
         tshirt2.setSize("Medium");
         tshirt2.setQuantity(5);
-        tshirt2.setPrice(new BigDecimal("3.99"));
+        tshirt2.setPrice(3.99);
 
         tshirt2 = tshirtRepository.save(tshirt2);
 
@@ -148,7 +148,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -170,7 +170,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
@@ -192,7 +192,7 @@ public class TshirtRepositoryTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         tshirt = tshirtRepository.save(tshirt);
 
