@@ -17,7 +17,7 @@ public class Fee {
     @Column(name="product_type")
     private String productType;
 
-    private BigDecimal fee;
+    private Double fee;
 
     public String getProductType() {
         return productType;
@@ -27,11 +27,11 @@ public class Fee {
         this.productType = productType;
     }
 
-    public BigDecimal getFee() {
+    public Double getFee() {
         return fee;
     }
 
-    public void setFee(BigDecimal fee) {
+    public void setFee(Double fee) {
         this.fee = fee;
     }
 }

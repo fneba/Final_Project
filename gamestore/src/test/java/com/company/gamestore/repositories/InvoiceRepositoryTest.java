@@ -44,13 +44,13 @@ class InvoiceRepositoryTest {
         invoice.setItemId(1);
         invoice.setItemType("type");
         invoice.setState("NY");
-        invoice.setProcessingFee(new BigDecimal("1.99"));
-        invoice.setTax(new BigDecimal("12.99"));
+        invoice.setProcessingFee(1.99);
+        invoice.setTax(12.99);
         invoice.setStreet("fake st");
-        invoice.setSubtotal(new BigDecimal("100.45"));
-        invoice.setTotal(new BigDecimal("113.15"));
+        invoice.setSubtotal(100.45);
+        invoice.setTotal(113.15);
         invoice.setZipCode("11111");
-        invoice.setUnitPrice(new BigDecimal("12.99"));
+        invoice.setUnitPrice(12.99);
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -60,13 +60,13 @@ class InvoiceRepositoryTest {
         invoice2.setItemId(2);
         invoice2.setItemType("types");
         invoice2.setState("MD");
-        invoice2.setProcessingFee(new BigDecimal("2.99"));
-        invoice2.setTax(new BigDecimal("10.99"));
+        invoice2.setProcessingFee(2.99);
+        invoice2.setTax(10.99);
         invoice2.setStreet("faker st");
-        invoice2.setSubtotal(new BigDecimal("200.25"));
-        invoice2.setTotal(new BigDecimal("210.24"));
+        invoice2.setSubtotal(200.25);
+        invoice2.setTotal(210.24);
         invoice2.setZipCode("22222");
-        invoice2.setUnitPrice(new BigDecimal("11.99"));
+        invoice2.setUnitPrice(11.99);
 
 
         invoice = invoiceRepo.save(invoice);
@@ -88,13 +88,13 @@ class InvoiceRepositoryTest {
         invoice.setItemId(1);
         invoice.setItemType("type");
         invoice.setState("NY");
-        invoice.setProcessingFee(new BigDecimal("1.99"));
-        invoice.setTax(new BigDecimal("12.99"));
+        invoice.setProcessingFee(1.99);
+        invoice.setTax(12.99);
         invoice.setStreet("fake st");
-        invoice.setSubtotal(new BigDecimal("100.45"));
-        invoice.setTotal(new BigDecimal("113.15"));
+        invoice.setSubtotal(100.45);
+        invoice.setTotal(113.15);
         invoice.setZipCode("11111");
-        invoice.setUnitPrice(new BigDecimal("12.99"));
+        invoice.setUnitPrice(12.99);
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -104,13 +104,13 @@ class InvoiceRepositoryTest {
         invoice2.setItemId(2);
         invoice2.setItemType("types");
         invoice2.setState("MD");
-        invoice2.setProcessingFee(new BigDecimal("2.99"));
-        invoice2.setTax(new BigDecimal("10.99"));
+        invoice2.setProcessingFee(2.99);
+        invoice2.setTax(10.99);
         invoice2.setStreet("faker st");
-        invoice2.setSubtotal(new BigDecimal("200.25"));
-        invoice2.setTotal(new BigDecimal("210.24"));
+        invoice2.setSubtotal(200.25);
+        invoice2.setTotal(210.24);
         invoice2.setZipCode("22222");
-        invoice2.setUnitPrice(new BigDecimal("11.99"));
+        invoice2.setUnitPrice(11.99);
 
         invoice = invoiceRepo.save(invoice);
         invoice2 = invoiceRepo.save(invoice2);
@@ -137,13 +137,13 @@ class InvoiceRepositoryTest {
         invoice.setItemId(1);
         invoice.setItemType("type");
         invoice.setState("NY");
-        invoice.setProcessingFee(new BigDecimal("1.99"));
-        invoice.setTax(new BigDecimal("12.99"));
+        invoice.setProcessingFee(1.99);
+        invoice.setTax(12.99);
         invoice.setStreet("fake st");
-        invoice.setSubtotal(new BigDecimal("100.45"));
-        invoice.setTotal(new BigDecimal("113.15"));
+        invoice.setSubtotal(100.45);
+        invoice.setTotal(113.15);
         invoice.setZipCode("11111");
-        invoice.setUnitPrice(new BigDecimal("12.99"));
+        invoice.setUnitPrice(12.99);
 
         // ARRANGE
         Invoice invoice2 = new Invoice();
@@ -153,13 +153,13 @@ class InvoiceRepositoryTest {
         invoice2.setItemId(2);
         invoice2.setItemType("types");
         invoice2.setState("MD");
-        invoice2.setProcessingFee(new BigDecimal("2.99"));
-        invoice2.setTax(new BigDecimal("10.99"));
+        invoice2.setProcessingFee(2.99);
+        invoice2.setTax(10.99);
         invoice2.setStreet("faker st");
-        invoice2.setSubtotal(new BigDecimal("200.25"));
-        invoice2.setTotal(new BigDecimal("210.24"));
+        invoice2.setSubtotal(200.25);
+        invoice2.setTotal(210.24);
         invoice2.setZipCode("22222");
-        invoice2.setUnitPrice(new BigDecimal("11.99"));
+        invoice2.setUnitPrice(11.99);
 
 
         invoice = invoiceRepo.save(invoice);
@@ -184,13 +184,13 @@ class InvoiceRepositoryTest {
         invoice.setItemId(1);
         invoice.setItemType("type");
         invoice.setState("NY");
-        invoice.setProcessingFee(new BigDecimal("1.99"));
-        invoice.setTax(new BigDecimal("12.99"));
+        invoice.setProcessingFee(1.99);
+        invoice.setTax(12.99);
         invoice.setStreet("fake st");
-        invoice.setSubtotal(new BigDecimal("100.45"));
-        invoice.setTotal(new BigDecimal("113.15"));
+        invoice.setSubtotal(100.45);
+        invoice.setTotal(113.15);
         invoice.setZipCode("11111");
-        invoice.setUnitPrice(new BigDecimal("12.99"));
+        invoice.setUnitPrice(12.99);
 
 
         Invoice invoice1 = invoiceRepo.save(invoice);

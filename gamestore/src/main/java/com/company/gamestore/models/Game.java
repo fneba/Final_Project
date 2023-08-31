@@ -3,6 +3,8 @@ package com.company.gamestore.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -19,24 +21,24 @@ public class Game {
     private int gameId;
 
     // not null
-
+    @NotEmpty(message = "You must supply a value for title.")
     private String title;
 
     // not null
-
+    @NotEmpty(message = "You must supply a value for esrb.")
     private String esrbRating;
 
     // not null
-
+    @NotEmpty(message = "You must supply a value for description.")
     private String description;// varchar(255) not null,
 
 
     // not null, decimals 5,2
-
-    private BigDecimal price;
+    @NotNull(message = "You must supply a value for price.")
+    private Double price;
 
     // not null
-
+    @NotEmpty(message = "You must supply a value for studio.")
     private String studio;
 
 
@@ -74,11 +76,11 @@ public class Game {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

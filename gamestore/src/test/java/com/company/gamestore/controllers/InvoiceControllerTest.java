@@ -81,11 +81,11 @@ class InvoiceControllerTest {
         invoice.setItemId(1);
         invoice.setItemType("type");
         invoice.setState("NY");
-        invoice.setProcessingFee(new BigDecimal("1.99"));
-        invoice.setTax(new BigDecimal("12.99"));
+        invoice.setProcessingFee(1.99);
+        invoice.setTax(12.99);
         invoice.setStreet("fake st");
-        invoice.setSubtotal(new BigDecimal("100.45"));
-        invoice.setTotal(new BigDecimal("113.15"));
+        invoice.setSubtotal(100.45);
+        invoice.setTotal(113.15);
         invoice.setZipCode("11111");
 
 

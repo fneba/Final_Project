@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface TaxRepository extends JpaRepository<Tax, String> {
 
-    BigDecimal findRateByState(String state);
+    Double findRateByState(String state);
 
 
 }

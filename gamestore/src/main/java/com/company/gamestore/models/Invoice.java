@@ -32,17 +32,17 @@ public class Invoice {
 
     private int quantity;
 
-    private BigDecimal unitPrice;
+    private Double unitPrice;
 
-    private BigDecimal subtotal;
+    private Double subtotal;
 
-    private BigDecimal tax;
+    private Double tax;
 
-    private BigDecimal processingFee;
+    private Double processingFee;
 
-    private BigDecimal total;
+    private Double total;
 
-    public Invoice(int id, String name, String street, String city, String state, String zipCode, String itemType, int itemId, int quantity, BigDecimal subtotal, BigDecimal tax, BigDecimal processingFee, BigDecimal total) {
+    public Invoice(int id, String name, String street, String city, String state, String zipCode, String itemType, int itemId, int quantity, Double subtotal, Double tax, Double processingFee, Double total) {
         this.id = id;
         this.name = name;
         this.street = street;
@@ -132,43 +132,43 @@ public class Invoice {
         this.quantity = quantity;
     }
 
-    public BigDecimal getSubtotal() {
+    public Double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(BigDecimal subtotal) {
+    public void setSubtotal(Double subtotal) {
         this.subtotal = subtotal;
     }
 
-    public BigDecimal getTax() {
+    public Double getTax() {
         return tax;
     }
 
-    public void setTax(BigDecimal tax) {
+    public void setTax(Double tax) {
         this.tax = tax;
     }
 
-    public BigDecimal getProcessingFee() {
+    public Double getProcessingFee() {
         return processingFee;
     }
 
-    public void setProcessingFee(BigDecimal processingFee) {
+    public void setProcessingFee(Double processingFee) {
         this.processingFee = processingFee;
     }
 
-    public BigDecimal getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
-    public BigDecimal getUnitPrice() {
+    public Double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
+    public void setUnitPrice(Double unitPrice) {
         this.unitPrice = unitPrice;
     }
 

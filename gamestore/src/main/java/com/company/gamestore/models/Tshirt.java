@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -19,21 +20,22 @@ public class Tshirt {
     private int id;
 
 
+    @NotEmpty(message = "You must supply a value for size.")
     private String size; // Let there be 3 sizes: small (S), medium (M), large (L)
 
-
+    @NotEmpty(message = "You must supply a value for color.")
     private String color; // Let there be 4 colors: Red, White, Black, Grey
 
-
+    @NotEmpty(message = "You must supply a value for description.")
     private String description;
 
+    @NotNull(message = "You must supply a value for price.")
+    private Double price;
 
-    private BigDecimal price;
-
-
+    @NotNull(message = "You must supply a value for quantity.")
     private int quantity;
 
-    public Tshirt(int id, String size, String color, String description, BigDecimal price, int quantity) {
+    public Tshirt(int id, String size, String color, String description, Double price, int quantity) {
         this.id = id;
         this.size = size;
         this.color = color;
@@ -76,11 +78,11 @@ public class Tshirt {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

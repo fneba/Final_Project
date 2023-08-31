@@ -77,7 +77,7 @@ class TshirtControllerTest {
         tshirt.setDescription("Big red tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(tshirt);
@@ -104,7 +104,7 @@ class TshirtControllerTest {
         tshirt.setDescription("Big white tshirt.");
         tshirt.setSize("Large");
         tshirt.setQuantity(5);
-        tshirt.setPrice(new BigDecimal("5.99"));
+        tshirt.setPrice(5.99);
 
         // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(tshirt);

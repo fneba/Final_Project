@@ -54,13 +54,14 @@ public class GameControllerTest {
     public void setUp() {
         // Standard set up method, for instantiating test objects
         // Don't have to do anything special for mockMvc since it's Autowired
+        gameRepository.deleteAll();
         game = new Game();
         game.setTitle("Horizom");
         game.setDescription("Fun");
         game.setEsrbRating("R");
         game.setQuantity(5);
         game.setStudio("Insomnia");
-        game.setPrice(new BigDecimal("59.99"));
+        game.setPrice(59.99);
 
     }
 
@@ -91,7 +92,7 @@ public class GameControllerTest {
         game2.setEsrbRating("R");
         game2.setQuantity(5);
         game2.setStudio("Insomnia");
-        game2.setPrice(new BigDecimal("59.99"));
+        game2.setPrice(59.99);
         game2.setGameId(1);
 
 

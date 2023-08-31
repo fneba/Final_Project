@@ -17,7 +17,7 @@ public class Tax {
     @Column(name="state")
     private String state;
 
-    private BigDecimal rate;
+    private Double rate;
 
     public String getState() {
         return state;
@@ -27,11 +27,11 @@ public class Tax {
         this.state = state;
     }
 
-    public BigDecimal getRate() {
+    public Double getRate() {
         return rate;
     }
 
-    public void setRate(BigDecimal rate) {
+    public void setRate(Double rate) {
         this.rate = rate;
     }
 }
