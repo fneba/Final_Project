@@ -32,7 +32,6 @@ public class GraphController {
         Optional<Game> game = gameRepository.findById(id);
 
         return game.orElse(null);
-
     }
 
     @QueryMapping
@@ -40,15 +39,13 @@ public class GraphController {
         List<Game> games = gameRepository.findByTitle(title);
 
         return games;
-
     }
 
     @QueryMapping
-    public List<Game> findGameByEsrb(@Argument String esrb){
-        List<Game> games = gameRepository.findByEsrbRating(esrb);
+    public List<Game> findGameByEsrb(@Argument String esrbRating){
+        List<Game> games = gameRepository.findByEsrbRating(esrbRating);
 
         return games;
-
     }
 
     @QueryMapping
@@ -68,8 +65,8 @@ public class GraphController {
     }
 
     @QueryMapping
-    public List<Console> findConsoleByManufacturer(@Argument String manu){
-        List<Console> consoles = consoleRepository.findByManufacturer(manu);
+    public List<Console> findConsoleByManufacturer(@Argument String manufacturer){
+        List<Console> consoles = consoleRepository.findByManufacturer(manufacturer);
 
         return consoles;
 
